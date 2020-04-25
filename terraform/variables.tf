@@ -3,7 +3,7 @@ variable "secret_key" {}
 variable "ssh_key_name" {}
 variable "ssh_key_pub" {}
 variable "vpc_id" {}
-variable "bastion_subnet_id" {}
+variable "server_subnet_id" {}
 variable "region" {
   default = "us-east-2"
 }

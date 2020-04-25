@@ -8,14 +8,15 @@ Currently, it includes instructions to create an Ubuntu EC2 Server.
 In order to use this repo, the user must take the following steps on their system:
 
 1. Install [terraform]
-2. Create a file in project root called `secret.tfvars` with the following contents:
-
+2. Ensure appropriate environment variables have been set:
 
 >```
->access_key = "<YOUR AWS ACCESS KEY>"
->secret_key = "<YOUR AWS SECRET KEY>"
->ssh_key_name = "<RSA KEY FILE NAME>"
->ssh_key_pub = "<PUBLIC RSA KEY CONTENTS>"
+>TF_VAR_vpc_id		        = "vpc-ff940297"
+>TF_VAR_server_subnet_id	= "subnet-4e5ad226"
+>TF_VAR_access_key          = "<YOUR AWS ACCESS KEY>"
+>TF_VAR_secret_key          = "<YOUR AWS SECRET KEY>"
+>TF_VAR_ssh_key_name        = "<RSA KEY FILE NAME>"
+>TF_VAR_ssh_key_pub         = "<PUBLIC RSA KEY CONTENTS>"
 >```
 
 1. Now, run `terraform init` in the project directory to initialize terraform access
