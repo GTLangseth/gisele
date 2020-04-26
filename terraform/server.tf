@@ -8,7 +8,7 @@ resource "aws_key_pair" "server_key" {
 resource "aws_instance" "server" {
   ami                           = "${var.amis[var.region]}"
   key_name                      = "${aws_key_pair.server_key.key_name}"
-  instance_type                 = "t2.micro"
+  instance_type                 = "${var.instance_type}"
   vpc_security_group_ids        = ["${aws_security_group.server-sg.id}"]
   associate_public_ip_address   = true
 }
